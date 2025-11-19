@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mohit Kumar · Portfolio</title>
+  <meta name="description" content="Mohit Kumar — BCA student learning Java and Web Development. Projects: Stone Paper Scissors, Weather App, College Canteen Management System." />
+
+  <!-- Open Graph (nice previews when sharing) -->
+  <meta property="og:title" content="Mohit Kumar · Portfolio" />
+  <meta property="og:description" content="BCA student learning Java & Web Dev. Projects and contact info." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #121418;
+      --text: #e8eef2;
+      --muted: #b8c4ce;
+      --accent: #4fc3f7;
+      --ring: rgba(79, 195, 247, 0.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+      background: radial-gradient(1200px 700px at 80% -10%, #12202a 0%, transparent 60%) , var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover, a:focus { text-decoration: underline; }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: grid;
+      gap: 16px;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+      border-radius: 20px;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .name {
+      font-size: clamp(24px, 3.6vw, 38px);
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+    nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.02);
+    }
+    nav a:focus { outline: 3px solid var(--ring); outline-offset: 2px; }
+
+    .summary {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: -4px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 820px){
+      .grid { grid-template-columns: 2fr 1fr; }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    }
+    .card h2 {
+      font-size: 1.15rem;
+      margin: 0 0 10px;
+      letter-spacing: 0.3px;
+    }
+    .list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .project {
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      display: grid;
+      gap: 6px;
+      background: rgba(255,255,255,0.02);
+    }
+    .project strong { font-size: 1rem; }
+    .tags {
+      display: flex; flex-wrap: wrap; gap: 6px;
+    }
+    .tag {
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+    }
+
+    .skills {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .skill {
+      padding: 6px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      margin-top: 22px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .contact a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.02);
+      margin-right: 8px;
+    }
+    .contact a:focus { outline: 3px solid var(--ring); outline-offset: 2px; }
+    .muted { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="top">
+        <div>
+          <div class="name">Mohit Kumar</div>
+          <div class="muted">BCA (2nd year) · Aryabhatta Knowledge University</div>
+        </div>
+        <nav aria-label="Primary">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <p class="summary" id="about">
+        Hii, I am Mohit Kumar—currently learning Java and web development (HTML, CSS, and JavaScript).
+        I enjoy applying these skills to real-world projects.
+      </p>
+
+      <div class="contact" id="contact" aria-label="Contact links">
+        <!-- Update email if different -->
+        <a href="mailto:mohitff9@gmail.com" aria-label="Send email">Email</a>
+        <a href="tel:+919341171746" aria-label="Call phone number">Call</a>
+        <a href="https://github.com/Mohitkumar143" target="_blank" rel="noopener" aria-label="Open GitHub profile">GitHub</a>
+        <a href="https://www.linkedin.com/in/mohit-kumar-9b5b61245/" target="_blank" rel="noopener" aria-label="Open LinkedIn profile">LinkedIn</a>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card" id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+        <ul class="list">
+          <li class="project">
+            <strong>Stone Paper Scissors Game</strong>
+            <div class="muted">A simple game with basic UI. Add link when repo is ready.</div>
+            <div class="tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+            <!-- Example link slot:
+            <a href="https://github.com/yourname/stone-paper-scissors" target="_blank" rel="noopener">View on GitHub</a> -->
+          </li>
+          <li class="project">
+            <strong>Weather App</strong>
+            <div class="muted">Shows current weather using a public API. Add your live demo link.</div>
+            <div class="tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">API</span>
+            </div>
+          </li>
+          <li class="project">
+            <strong>College Canteen Management System</strong>
+            <div class="muted">Manage menu & orders. Add screenshots or a README link.</div>
+            <div class="tags">
+              <span class="tag">Java</span><span class="tag">C</span><span class="tag">GitHub</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <aside class="card" id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills</h2>
+        <div class="skills">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Java</span>
+          <span class="skill">C</span>
+          <span class="skill">Git & GitHub</span>
+          <span class="skill">VS Code</span>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Mohit Kumar · Built with ♥ using HTML & CSS
+    </footer>
+  </div>
+
+  <script>
+    // Keep copyright year current
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
